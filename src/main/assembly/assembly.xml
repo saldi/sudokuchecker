@@ -1,0 +1,32 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd">
+
+
+    <id>dist</id>
+    <!-- Specifies that our binary distribution is a zip package -->
+    <formats>
+        <format>zip</format>
+    </formats>
+
+    <includeBaseDirectory>true</includeBaseDirectory>
+    <baseDirectory>SudokuChecker</baseDirectory>
+
+    <files>
+        <file>
+            <source>target/${project.artifactId}-${project.version}-jar-with-dependencies.jar</source>
+            <outputDirectory>./</outputDirectory>
+            <destName>sudoku-checker.jar</destName>
+        </file>
+    </files>
+
+    <fileSets>
+        <fileSet>
+            <directory>src/main/etc</directory>
+            <outputDirectory>./</outputDirectory>
+            <includes>
+                <include>*.bat</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+
+</assembly>

@@ -1,0 +1,1 @@
+java -jar sudoku-checker.jar %1
