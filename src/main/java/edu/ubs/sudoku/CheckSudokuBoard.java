@@ -27,8 +27,10 @@ public class CheckSudokuBoard {
     private static int resolveResponse(Boolean correctSolution) {
         if (correctSolution)
             return 0;
-        else
+        else {
+            LOGGER.error("Sudoku board is not correct");
             return -1;
+        }
     }
 
 }
